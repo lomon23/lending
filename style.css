@@ -100,3 +100,45 @@ header {
     opacity: 0;
     transform: translateY(20px);
 }
+
+/* Планшети (до 900px) — робимо 2 колонки */
+@media (max-width: 900px) {
+    .gallery {
+        column-count: 2;
+        padding: 30px 20px;
+    }
+    header {
+        padding: 20px;
+    }
+    .header-left, .header-right {
+        gap: 15px;
+    }
+}
+
+/* Телефони (до 600px) — робимо 1 колонку */
+@media (max-width: 600px) {
+    .gallery {
+        column-count: 1;
+        padding: 20px 15px;
+    }
+    
+    header {
+        flex-direction: column; /* Хедер стає вертикальним */
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .status {
+        display: none; /* Ховаємо статус, щоб не захаращувати екран */
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+}
