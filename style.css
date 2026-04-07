@@ -1,0 +1,102 @@
+body {
+    background: #050505; /* Ще глибший чорний */
+    color: #f0f0f0;
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    padding: 30px 50px;
+    max-width: 1900px; /* Додай це, щоб хедер не розлітався ширше за картки */
+    margin: 0 auto;   /* Центруємо хедер */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: sticky;
+    top: 0;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.header-left, .header-right {
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+.status {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Стиль посилань без кнопок */
+.contact-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.contact-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #f0f0f0;
+    transition: width 0.3s ease;
+}
+
+.contact-link:hover:after {
+    width: 100%;
+}
+
+.contact-link:hover {
+    color: #aaa;
+}
+
+/* Галерея, яка не розповзається на 100% */
+.gallery {
+    column-count: 3;
+    column-gap: 40px; /* Трохи більший зазор між колонками для повітря */
+    padding: 60px 50px;
+    max-width: 1900px; /* Зміни з 1200 на 1600 */
+    margin: 0 auto;
+}
+
+.item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.item img {
+    width: 100%;
+    border-radius: 4px; /* Менший радіус для строгішого вигляду */
+    display: block;
+    filter: grayscale(10%); /* Трохи готики */
+    transition: filter 0.3s ease;
+}
+
+.item img:hover {
+    filter: grayscale(0%);
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
